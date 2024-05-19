@@ -13,10 +13,11 @@ class TaskListView(generic.ListView):
         ordering = ["-deadline"]
 
 
-class TagsListView:
+class TagsListView(generic.ListView):
     model = Tag
-    template_name = "web/tag_list.html"
+    template_name = "web/tags_list.html"
     context_object_name = "tags_list"
 
     class Meta:
         ordering = ["name"]
+

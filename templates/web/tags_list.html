@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+	<title>Tags List</title>
+{% endblock %}
+
+{% block content %}
+	<h1>Tags</h1>
+	<div class="tags-content">
+		<table class="table">
+			<tr>
+				<th>Name</th>
+				<th>Update</th>
+				<th>Delete</th>
+			</tr>
+			<tr>
+				{% for tag in tags_list %}
+					<td>{{ tag.name }}</td>
+					<td>
+						<a href="#" class="btn btn-secondary">Update</a>
+					</td>
+					<td><a href="#" class="btn btn-secondary">Delete</a></td>
+					</tr>
+				{% endfor %}
+
+
+		</table>
+	</div>
+{% endblock %}

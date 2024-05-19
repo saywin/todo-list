@@ -18,10 +18,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from web.views import TaskListView, TagsListView
+from web.views import (
+    TaskListView,
+    TagsListView,
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("todo-list/", TaskListView.as_view(), name="task-list"),
-    path("tags/", TagsListView.as_view(), name="tags-list")
+    path("tags/", TagsListView.as_view(), name="tags-list"),
 ]
