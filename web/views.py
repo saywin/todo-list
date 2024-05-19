@@ -8,7 +8,6 @@ class TaskListView(generic.ListView):
     model = Task
     template_name = "web/task_list.html"
     context_object_name = "task_list"
-    paginate_by = 5
 
     class Meta:
         ordering = ["-deadline"]
