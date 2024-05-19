@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 
-from web.models import Task
+from web.models import Task, Tag
 
 
 class TaskListView(generic.ListView):
@@ -11,3 +11,12 @@ class TaskListView(generic.ListView):
 
     class Meta:
         ordering = ["-deadline"]
+
+
+class TagsListView:
+    model = Tag
+    template_name = "web/tag_list.html"
+    context_object_name = "tags_list"
+
+    class Meta:
+        ordering = ["name"]

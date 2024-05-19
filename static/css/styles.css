@@ -5,6 +5,10 @@
     margin-bottom: 40px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .header h1 {
     margin: 0;
 }
