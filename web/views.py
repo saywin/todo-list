@@ -12,6 +12,7 @@ class TaskListView(generic.ListView):
     model = Task
     template_name = "web/task_list.html"
     context_object_name = "task_list"
+    paginate_by = 5
 
     class Meta:
         ordering = ["-deadline"]
@@ -47,6 +48,7 @@ class TagsListView(generic.ListView):
     model = Tag
     template_name = "web/tags_list.html"
     context_object_name = "tags_list"
+    paginate_by = 5
 
     class Meta:
         ordering = ["name"]
@@ -55,15 +57,15 @@ class TagsListView(generic.ListView):
 class TagCreateView(generic.CreateView):
     model = Tag
     fields = "__all__"
-    success_url = reverse_lazy("web:tag-list")
+    success_url = reverse_lazy("web:tags-list")
 
 
 class TagUpdateView(generic.UpdateView):
     model = Tag
     fields = "__all__"
-    success_url = reverse_lazy("web:tag-list")
+    success_url = reverse_lazy("web:tags-list")
 
 
 class TagDeleteView(generic.DeleteView):
     model = Tag
-    success_url = reverse_lazy("web:tag-list")
+    success_url = reverse_lazy("web:tags-list")

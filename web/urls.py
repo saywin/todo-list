@@ -7,6 +7,9 @@ from web.views import (
     TaskUpdateView,
     TaskDeleteView,
     StatusTask,
+    TagCreateView,
+    TagUpdateView,
+    TagDeleteView,
 )
 
 urlpatterns = [
@@ -16,6 +19,9 @@ urlpatterns = [
     path("task/<int:pk>/delete", TaskDeleteView.as_view(), name="task-delete"),
     path("status/<int:pk>/", StatusTask.as_view(), name="task-status"),
     path("tags/", TagsListView.as_view(), name="tags-list"),
+    path("tag/create/", TagCreateView.as_view(), name="tag-create"),
+    path("tag/<int:pk>/update/", TagUpdateView.as_view(), name="tag-update"),
+    path("tag/<int:pk>/delete/", TagDeleteView.as_view(), name="tag-delete"),
 ]
 
 app_name = "web"

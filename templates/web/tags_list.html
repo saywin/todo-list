@@ -5,7 +5,13 @@
 {% endblock %}
 
 {% block content %}
-	<h1>Tags</h1>
+	<div class="header">
+		<h1>Tags</h1>
+		<a class="btn btn-primary task-btn-create"
+		   href="{% url "web:tag-create" %}">
+			Add Tag
+		</a>
+	</div>
 	<div class="tags-content">
 		<table class="table">
 			<tr>
@@ -17,13 +23,11 @@
 				{% for tag in tags_list %}
 					<td>{{ tag.name }}</td>
 					<td>
-						<a href="#" class="btn btn-secondary">Update</a>
+						<a href="{% url "web:tag-update" pk=tag.pk %}" class="btn btn-secondary">Update</a>
 					</td>
-					<td><a href="#" class="btn btn-secondary">Delete</a></td>
+					<td><a href="{% url "web:tag-delete" pk=tag.pk %}" class="btn btn-secondary">Delete</a></td>
 					</tr>
 				{% endfor %}
-
-
 		</table>
 	</div>
 {% endblock %}
