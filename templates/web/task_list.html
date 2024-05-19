@@ -8,7 +8,7 @@
 	<div class="header">
 		<h1>TODO List</h1>
 		<a class="btn btn-primary task-btn-create"
-		   href="{% url "task-create" %}">
+		   href="{% url "web:task-create" %}">
 			Add Task
 		</a>
 	</div>
@@ -34,18 +34,24 @@
 					</p>
 					<p>{% for tag in task.tags.all %}
 						Tags: {{ tag }}
-						<a href="{% url "task-update" pk=task.pk %}">
+						<a href="{% url "web:task-update" pk=task.pk %}">
 							Update
 						</a> |
-						<a href="{% url "task-delete" pk=task.pk %}">
+						<a href="{% url "web:task-delete" pk=task.pk %}">
 							Delete
 						</a>
 					</p>
 				</div>
 						{% if task.is_done %}
-							<a href="#" class="btn btn-secondary task-btn-complete">Undo</a>
+							<a href="{% url "web:task-status" pk=task.pk %}"
+							   class="btn btn-secondary task-btn-complete">
+								Undo
+							</a>
 						{% else %}
-							<a href="#" class="btn btn-success task-btn-complete">Complete</a>
+							<a href="{% url "web:task-status" task.id %}"
+							   class="btn btn-success task-btn-complete">
+								Complete
+							</a>
 						{% endif %}
 				{% endfor %}
 			</div>
