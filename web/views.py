@@ -33,7 +33,6 @@ class TaskDeleteView(generic.DeleteView):
     success_url = reverse_lazy("web:task-list")
 
 
-# @method_decorator(csrf_exempt, name="post")
 class StatusTask(View):
     def get(self, request, pk):
         task = get_object_or_404(Task, id=pk)
