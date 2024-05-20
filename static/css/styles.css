@@ -1,0 +1,42 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.task-btn-create {
+    margin-left: auto;
+}
+
+.task-done {
+    color: green;
+    font-weight: bold;
+}
+
+.task-not-done {
+    color: red;
+    font-weight: bold;
+}
+
+.task-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-content p {
+    margin: 0;
+}
+
+.task-btn-complete {
+    margin-left: auto;
+}
