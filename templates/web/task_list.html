@@ -40,8 +40,8 @@
 						<a href="{% url "web:task-delete" pk=task.pk %}">
 							Delete
 						</a>
-					</p>
-				</div>
+						</p>
+						</div>
 						{% if task.is_done %}
 							<a href="{% url "web:task-status" pk=task.pk %}"
 							   class="btn btn-secondary task-btn-complete">
@@ -53,7 +53,7 @@
 								Complete
 							</a>
 						{% endif %}
-				{% endfor %}
+					{% endfor %}
 			</div>
 			<hr>
 		{% endfor %}

@@ -21,11 +21,21 @@
 			</tr>
 			<tr>
 				{% for tag in tags_list %}
-					<td>{{ tag.name }}</td>
 					<td>
-						<a href="{% url "web:tag-update" pk=tag.pk %}" class="btn btn-secondary">Update</a>
+						{{ tag.name }}
 					</td>
-					<td><a href="{% url "web:tag-delete" pk=tag.pk %}" class="btn btn-secondary">Delete</a></td>
+					<td>
+						<a href="{% url "web:tag-update" pk=tag.pk %}"
+						   class="btn btn-secondary">
+							Update
+						</a>
+					</td>
+					<td>
+						<a href="{% url "web:tag-delete" pk=tag.pk %}"
+						   class="btn btn-secondary">
+							Delete
+						</a>
+					</td>
 					</tr>
 				{% endfor %}
 		</table>
